@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+       <!-- 
+           prevent阻止标签的默认事件,比如说a标签的跳转事件 
+        -->
+     <a @click.prevent="foo" href="http://www.baidu.com/">去百度</a>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+      
+            },
+            methods: {
+                foo(){
+                    console.log('点击了按钮');
+                }
+            },
+       })
+   </script>
+</body>
+</html>

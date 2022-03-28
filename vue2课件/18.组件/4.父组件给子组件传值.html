@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 父组件 -->
+    <div id='app'>
+        <!-- 
+           子组件mynav 将子组件的属性title和父组件data中的数据login绑定
+           属性前不加:,后面的值是一个字符串,传给子组件的就是一个字符串
+           属性前加:,后面的值是一个表达式,vue会从实例中的data找到该表达式的值,并传给子组件 
+         -->
+        <mynav :title="login"></mynav>
+        <mynav :title="register"></mynav>
+    </div>
+    <!-- template模板一般放到根节点外面,层次更清晰 -->
+    <template id='tem'>
+        <div class="header">{{title}}</div>
+    </template>
+    <script>
+
+
+        Vue.config.productionTip = false;
+        /*
+        父组件想要给子组件传值,需要以下几个步骤:
+          1.子组件在props中定义需要父组件传值的属性名(如title)
+          2.在子组件中使用props中定义的属性(title)
+          3.在父组件中使用子组件,并使用v-bind绑定子组件的属性(title),
+          将父组件需要传的值和属性(title)绑定即可
+         */
+        Vue.component('mynav', {
+            template: '#tem',
+            props: {
+                title: {
+                    type: String,
+                    default: ''
+                }
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    login: '登录页',
+                    register: '注册页'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

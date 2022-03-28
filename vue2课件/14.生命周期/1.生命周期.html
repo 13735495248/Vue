@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div id="num">{{num}}</div>
+        <button @click='add'>增加1</button>
+        <button @click='$destroy()'>销毁vm</button>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                num: 1,
+            },
+            methods: {
+                add() {
+                    this.num++;
+
+                },
+                sub() {
+
+                }
+            },
+
+            beforeCreate() {
+                //data和methods中方法还没有创建,因此data中的数据和methods中的方法无法使用
+                console.log('beforeCreate');
+                console.log(document.getElementById('num').innerHTML);
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            created() {
+                //data和methods完成初始化,里面的数据和方法可以使用了
+                //但是数据没有渲染到页面
+                //可以在这个方法里进行数据请求操作,但是不能进行dom操作
+                console.log('created');
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            beforeMount() {
+                //data和methods已经在created里面初始化了,数据和方法自然可以使用
+                //但是数据仍然没有渲染到页面
+                //可以在这个方法里进行数据请求操作,以及dom操作
+                console.log('beforeMount');
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            mounted() {
+                //data和methods中数据可以使用
+                //数据也渲染到页面了
+                console.log('mounted');
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            beforeUpdate() {
+                console.log('beforeUpdate');
+                //数据已经更新 但是页面还没更新
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            updated() {
+                //数据页面都更新了
+                console.log('updated');
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            beforeDestroy() {
+                console.log('beforeDestroy');
+                //在这里进行关闭定时器、取消订阅等操作
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+
+            destroyed() {
+                console.log('destroyed');
+                console.log('num:',this.num);
+                console.log('add方法:',this.add);
+            },
+        })
+    </script>
+</body>
+
+</html>

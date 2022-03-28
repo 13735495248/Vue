@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <mc></mc>
+    </div>
+    <!-- template模板一般放到根节点外面,层次更清晰 -->
+    <template id='tem'>
+        <div class="header">首页</div>
+    </template>
+    <script>
+
+
+        Vue.config.productionTip = false;
+        /* 定义一个全局组件,使用的时候直接用组件名作为标签使用即可 */
+        let mc = Vue.component('mynav', {
+            template: '#tem',
+        });
+        
+        var vm = new Vue({
+            el: '#app',
+            /* 引入组件,属性名是局部组件名,属性值是引入的组件 */
+            components:{
+              'mc':mc
+            }
+        })
+    </script>
+</body>
+
+</html>

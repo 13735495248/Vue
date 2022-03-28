@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <!-- 1.引入vue.js -->
+   <script src="../vue.js"></script>
+<title>扫地小孩专属模板</title>
+
+</head>
+<body>
+    
+    <!-- 
+        2.设置一个根节点
+        准备好一个容器,我们称为根节点,容器代码块我们称为--------vue模板
+        容器和vue实例是一对一的关系,一个容器只能关联一个vue实例 否则会报错
+     -->
+    <div id="app">
+        <div>{{msg1}}</div>
+    </div>
+   <script>
+    //阻止vue生产提示
+    Vue.config.productionTip=false;
+    /* 
+    3.创建vue实例 
+    参数是个配置对象 
+    */
+    const vm = new Vue({
+        /* 
+        element的缩写 用于指定当前vue实例为哪个容器服务
+        值通常为css选择器 值也可以写成document.getElementById('app')
+        但是不建议这样写太复杂 直接用选择器形式
+         */
+        el:'#app',
+        //el:document.getElementById('app'),
+        /* 
+        data用于存储数据,数据供el所指定的容器去使用
+        值我们暂时写成一个对象
+        */
+        data:{
+            msg1:'hello vue1'
+        }
+        
+    });
+    console.log('vm:',vm);
+
+   </script>
+</body>
+</html>

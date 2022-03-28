@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+    <!-- View:页面视图 -->
+   <div id='app'>
+      <div id="name">我叫</div>
+      <div id="age">我今年岁</div>
+   </div>
+   <script>
+       /* Model:数据模型 */
+      let data = {
+          name:'刘备',
+          age:18
+      }
+
+      /* Controller:控制器,主要是控制数据在页面的显示以及所有的逻辑实现 */
+      document.getElementById('name').innerHTML=`我叫${data.name}`;
+      document.getElementById("age").innerHTML = `我今年${data.age}岁`;
+
+      /* 
+      MVC架构模式:
+        Model:数据模型-->data数据
+        View:视图-->页面
+        Controller:控制器-->js控制数据与页面交互的逻辑代码
+      */
+
+      
+   </script>
+</body>
+</html>

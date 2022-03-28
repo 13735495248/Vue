@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div>武将姓名:{{name}}</div>
+        <button @click="randomID">随机武将ID:{{ID}}</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    name: '关羽',
+                    ID: 0,
+                    ary: ['关羽', '张飞', '赵云', '马超', '黄忠']
+                }
+            },
+            methods: {
+                randomID() {
+                    //取随机数,范围[0,4]
+                    let a = Math.floor(Math.random() * 5)
+                    this.ID = a;
+                },
+
+            },
+        watch: {
+            ID(newval, oldval){
+                //随机到的id作为数组索引,取出数组元素赋值给name
+                this.name = this.ary[newval];
+            }
+        }
+       })
+    </script>
+</body>
+
+</html>

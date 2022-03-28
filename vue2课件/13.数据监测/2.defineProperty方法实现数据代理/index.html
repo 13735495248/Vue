@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        数据代理:
+          一个对象代理另一个对象属性的读写 
+        */
+
+        /* 
+        vm代理了_data的name属性,
+        我们通过vm.name获取属性时,实质是通过get方法获取了_data的name属性
+        我们通过vm.name='dbb'修改name属性时,实质是通过set方法修改了_data的name属性
+        vue中我们可以直接通过实例使用data中的属性就是使用了数据代理,vue实例代理了data中
+        的所有属性!!! 
+        */
+        let _data = { name: '刘备', age: 18 };
+        let vm = {};
+        Object.defineProperty(vm, 'name', {
+            get() {
+                return _data.name;
+            },
+
+            set(value) {
+                _data.name = value;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

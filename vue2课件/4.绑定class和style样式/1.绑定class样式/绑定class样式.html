@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+<style>
+    
+    .redColor{
+        color: red;
+    }
+</style>
+</head>
+<body>
+   <div id='app'>
+       <!--
+           使用v-bind可以给标签绑定class样式
+           语法: :class="{类名:boolean}" 当boolean为true表示给当前元素添加该class 
+           否则不添加
+           注意: :class="obj",obj是一个对象
+        -->
+      
+      <!-- 下面两种写法都可以 -->
+      <div :class="{redColor:true}">hello vue</div>
+      <div :class="obj">hello vue</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              obj:{redColor:true}
+            },
+
+       })
+   </script>
+</body>
+</html>

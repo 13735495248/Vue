@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+   <style>
+       .default{
+           font-size: 14px;
+           width: 100px;
+           color: #666;
+       }
+       .container{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+       .select{
+        font-size: 18px;
+        color: #000;
+       }
+   </style>
+</head>
+<body>
+   <div id='app'>
+      <div class="container">
+          <div class="default" @click="flag=true" :class="{'select':flag}">订阅</div>
+          <div class="default" @click="flag=false" :class="{'select':!flag}">推荐</div>
+      </div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              flag:true
+            },
+            
+       })
+   </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+   <style>
+      .redColor{
+          color: red;
+      }
+   </style>
+</head>
+<body>
+   <div id='app'>
+    <div :class="{redColor:flag}">{{msg}}</div>
+    <button @click="foo1">是扫地小孩</button>
+    <button @click="foo2">不是扫地小孩</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              msg:"魔镜魔镜,谁是世界上最帅的男人?",
+              flag:false
+            },
+            methods: {
+                foo1(){
+                    this.msg = '回答正确!扫地小孩很高兴,奖励魔镜红色样式!'
+                    this.flag = true;
+                },
+
+                foo2(){
+                    this.msg = "回答错误!魔镜被扫地小孩打碎了!";
+                    this.flag = false;
+
+                }
+
+            },
+       })
+   </script>
+</body>
+</html>

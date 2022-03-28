@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+      <div>大话西游是什么类型的电影?{{flag?'喜剧':'爱情剧'}}</div>
+      <button @click='changeType'>点击切换类型</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              flag:true,
+            },
+
+            methods: {
+                changeType(){
+                    this.flag = !this.flag;
+                    
+                }
+            },
+            computed:{
+                type(){
+                    return this.flag?'喜剧':'爱情剧'
+                }
+            },
+            watch:{
+                //简写形式,不能配置deep:true,即不能深度监听
+                flag(newval,oldval){
+                    console.log('flag变了',`newval:${newval}`,`oldval:${oldval}`);
+
+                }
+                
+            }
+
+       })
+   </script>
+</body>
+</html>

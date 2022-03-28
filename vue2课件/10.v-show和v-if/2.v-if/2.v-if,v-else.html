@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .my {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: skyblue;
+        }
+
+        .icon {
+            height: 90px;
+            width: 90px;
+            margin-top: 30px;
+            border-radius: 45px;
+        }
+
+        .login {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .name {
+            margin-top: 10px;
+        }
+
+        .title {
+            margin-top: 10px;
+            color: blue;
+        }
+
+        .btnsbg{
+            position:fixed;
+            bottom: 100px;
+            left:10px
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <div class="my">我的</div>
+        <div class="login" v-if="islogin">
+            <img class="icon" src="./1.jpg">
+            <div class="name">扫地小孩</div>
+            <div class="title">已经登录</div>
+        </div>
+        <div v-else="islogin">
+            未登录请去登录!!!
+        </div>
+
+        <div class="btnsbg">
+            <button @click="islogin=true">登录</button>
+            <button @click="islogin=false">退出登录</button>
+
+        </div>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                islogin: false
+
+            }
+        })
+    </script>
+</body>
+
+</html>

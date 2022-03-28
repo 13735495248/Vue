@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>扫地小孩专属模板</title>
+<script src="./local.js"></script>
+</head>
+<body>
+    <button onclick='saveFun()'>存值</button>
+    <button onclick='getFun()'>取值</button>
+    <button onclick='removeFun()'>清空一个值</button>
+   <script>
+    function saveFun(){
+        //存数据 第一个参数是key 第二个是要存的值value
+        //注意value传任意类型的值都会转换成字符串
+        local.setItem('name','刘备')
+        //存对象要先用JSON.stringify给转换成字符串
+        local.setItem('person',JSON.stringify({'name':'dbb','age':18}));
+    }
+
+    function getFun(){
+        //取数据 只有一个参数是存的时候设置的key 
+        let name = local.getItem('name');
+        //取对象要先用JSON.parse给转换成对象
+        let person =JSON.parse(local.getItem('person'));
+        console.log(name);
+        console.log(person);
+    }
+
+    function removeFun(){
+        //删除数据 只有一个参数是存的时候设置的key 
+        local.removeItem('name')
+        local.removeItem('person')
+    }
+    
+   </script>
+</body>
+</html>

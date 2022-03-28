@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+   <div id='app'>
+
+   </div>
+   <script>
+      Vue.config.productionTip = false;
+      var vm = new Vue({
+         el: '#app',
+         data: {
+
+         }
+      })
+      /* 
+      虚拟dom是什么?
+        使用$createElement方法创建一个虚拟dom,虚拟dom本质就是一个对象
+
+      虚拟dom的作用?
+         虚拟dom的优势就是减少dom的操作次数提升渲染效率
+         例如:页面上有1000个div现在要把其中10个div的innerHtml改变,
+         如果用原生js方法去操作dom修改,就会把这1000个div重新渲染,这会触发太多次重绘重排
+         严重影响浏览器性能,而使用虚拟dom,vue会对比变化前后的虚拟dom对象,
+         找到变化的10个dom,只更新渲染这10个元素,极大的提升了浏览器的渲染效率
+    
+      */
+      let vnode = vm.$createElement("div", 'hello vue');
+      console.log('vnode:', vnode);
+   </script>
+</body>
+
+</html>

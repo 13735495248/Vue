@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="text" v-model.number="a">
+        <select v-model="opt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" v-model.number="b">
+        <button @click="sum">=</button>
+        <input type="text" v-model.number="s">
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                opt: '+',
+                a: "",
+                b: "",
+                s: "",
+
+            },
+
+            methods: {
+                sum() {
+                    this.s = eval(`${this.a}${this.opt}${this.b}`);
+                    // switch (this.opt) {
+                    //     case "+":
+                    //         //this.s = this.a + this.b;
+                    //         break;
+                    //     case "-":
+                    //         this.s = this.a - this.b;
+                    //         break;
+                    //     case "*":
+                    //         this.s = this.a * this.b;
+                    //         break;
+                    //     case "/":
+                    //         this.s = this.a / this.b;
+                    //         break;
+
+                    //     default:
+                    //         break;
+                    // }
+
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

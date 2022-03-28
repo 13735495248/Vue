@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 
+        click传递参数,需要写js代码
+        语法:方法名(表达式) 这里的表达式可以是data中的属性
+        -->
+        <button @click="foo1(msg)">按钮1</button>
+        <!-- 
+            方法的参数里面可以用 $event占位 方法里面可以获取到event
+            我们可以在方法中使用event.target获取当前dom元素
+         -->
+        <button @click="foo2(msg,$event)">按钮2</button>
+    </div>
+    <script>
+
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello'
+            },
+            methods: {
+                foo1(para) {
+                    console.log('调用了foo1方法,并传递了参数:', para);
+                },
+                foo2(para,event) {
+                    console.log('调用了foo2方法,并传递了参数:', para,event);
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>

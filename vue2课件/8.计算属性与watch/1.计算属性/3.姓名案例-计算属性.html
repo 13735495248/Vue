@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+   <div id='app'>
+      <label>姓:</label><input v-model='firstname' type="text">
+      <label>名:</label><input v-model='lastname' type="text">
+      <div>全名:{{fullname}}</div>
+      <div>全名:{{fullname}}</div>
+      <div>全名:{{fullname}}</div>
+      <div>全名:{{fullname}}</div>
+   </div>
+   <script>
+      /*
+      当页面中有某些数据依赖其他数据进行变动的时候，可以使用计算属性
+      计算属性 computed 是基于data中数据进行处理的，data数据变化，他也跟着变化
+      当data中数据没有发生改变时，我们调用computed中函数n次，只会执行一次,
+      因为数据做了缓存!!!
+       */
+      Vue.config.productionTip = false;
+      var vm = new Vue({
+         el: '#app',
+         data: {
+            firstname: '',
+            lastname: ''
+         },
+         computed: {
+            fullname: {
+               //当有人读取fullname时 get会被调用 返回值就是fullname的值
+               get() {
+                  console.log('调用了计算属性fullname的get方法');
+                  let fullnamestr = this.firstname + this.lastname;
+                  return fullnamestr;
+               },
+               //当有人设置fullname的值时 set会被调用
+               set(newval) {
+                  console.log('调用了计算属性fullname的set方法');
+                 
+               }
+
+            }
+
+         }
+
+      })
+   </script>
+</body>
+
+</html>

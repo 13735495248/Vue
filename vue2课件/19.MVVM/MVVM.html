@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+      <div>我叫{{name}}</div>
+      <div>我今年{{age}}岁</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+                name:'曹操',
+                age:'45'
+      
+            }
+       })
+       console.log(vm);
+
+       /*
+       总结:
+       MVVM架构模式
+         1.M：模型(Model)-->data中的数据
+         2.V:视图(View-->Vue模板代码
+         3.VM:视图模型-->Vue实例
+        */
+   </script>
+</body>
+</html>

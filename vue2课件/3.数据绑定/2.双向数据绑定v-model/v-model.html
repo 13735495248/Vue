@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <input id="input" type="text" v-model='msg'>
+        <div>{{msg}}</div>
+    </div>
+    <script>
+        /* 
+        v-model:双向数据绑定指令
+        注意:该指令一般只用于input标签和select标签
+        使用语法: v-model:属性名="表达式"
+        简写形式: v-model="表达式"
+        */
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello'
+            }
+        })
+
+        /*
+        v-model是双向数据绑定,意味着修改输入框的value值,data中的数据msg会变化,
+        修改msg时,输入框中的值也会变化.
+        在控制台演示
+        */
+         
+    </script>
+</body>
+
+</html>

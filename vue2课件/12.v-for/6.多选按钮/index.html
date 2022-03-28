@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #999;
+        }
+
+        .item {
+            margin-top: 1px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+
+        .icon {
+            margin-left: 10px;
+            height: 60px;
+            width: 60px;
+        }
+
+        .select {
+            margin-left: 10px;
+            height: 20px;
+            width: 20px;
+        }
+
+        .intro {
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 60px;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <div class="item" v-for="(item,index) in list" @click="selectMsg(item)">
+            <img class="select" :src="item.select?selectimg:unselectimg">
+            <img class="icon" :src="item.img">
+            <div class="intro">
+                <div>{{item.name}}</div>
+                <div>{{item.introduction}}</div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                selectimg: './imgs/select.png',
+                unselectimg: './imgs/unselect.png',
+                list: [
+                    {
+                        select:false,
+                        img: './imgs/1.jpg',
+                        name: '老虎',
+                        introduction: '英文名tiger,凶猛的野兽'
+                    },
+                    {
+                        select:false,
+                        img: './imgs/1.jpg',
+                        name: '狮子',
+                        introduction: '威武的狮子'
+                    },
+                    {
+                        select:false,
+                        img: './imgs/1.jpg',
+                        name: '猫咪',
+                        introduction: '可爱的猫咪'
+                    },
+
+                ],
+
+            },
+
+            methods: {
+                selectMsg(item){
+                    //点击时给select取反,即选中状态变为未选中,未选中变为选中
+                    item.select = !item.select;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+   <script>
+      //伪代码
+      //  function Component(){
+
+      //  }
+      //  /* 
+      //  当原型对象的属性data是对象时,
+      //  修改任何一个组件实例的name属性,所有其他实例的name属性都会改变
+      //  */
+      //  Component.prototype.data = {
+      //    name:'刘备'
+      //  }
+      //  let a = new Component();
+      //  let b = new Component();
+      //  a.data.name = '关羽';
+      //  console.log("a.data.name:",a.data.name);
+      //  console.log("b.data.name:",b.data.name);
+
+      function Component() {
+
+      }
+      /* 
+      当原型对象的属性data是函数时,
+      修改任何一个组件实例的name属性,对其他组件实例都不会产生影响
+      */
+      Component.prototype.data = function(){
+         return {
+            name:'刘备'
+         }
+      }
+      let a = new Component();
+      let b = new Component();
+      //data函数是同一个,但是函数的返回对象是完全不同的两个
+      console.log(a.data == b.data);
+      let aobj = a.data();
+      let bobj = b.data();
+      aobj.name = '关羽';
+      console.log("aobj.name:", aobj.name);
+      console.log("bobj.name:", bobj.name);
+   </script>
+</body>
+
+</html>

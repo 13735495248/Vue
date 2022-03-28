@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+   <style>
+       .parent{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+       }
+       .son{
+           width: 100px;
+           height: 100px;
+           background-color: blue;
+       }
+   </style>
+</head>
+<body>
+   <div id='app'>
+       <!-- 
+           stop用于阻止事件的冒泡 
+           事件冒泡:当一个元素接收到事件,会把它接收到的事件传递给它的父元素,
+           一直传递下去,直到window
+        -->
+    <div class="parent" @click="foo1">
+        <div class="son" @click.stop="foo2"></div>
+    </div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+      
+            },
+            methods: {
+                foo1(){
+                    console.log('parent方法执行了');
+                },
+                foo2(){
+                    console.log('son方法执行了');
+                }
+            },
+       })
+   </script>
+</body>
+</html>

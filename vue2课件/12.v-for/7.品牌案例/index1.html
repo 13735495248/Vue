@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        .header {
+            margin-top: 10px;
+            display: flex;
+            width: 600px;
+            background-color: skyblue;
+        }
+
+        .header .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .content {
+            display: flex;
+            width: 600px;
+        }
+
+        .content .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        id: <input type="text" v-model="ID">
+        name: <input type="text" v-model="name">
+        <button @click="add">添加</button>
+        搜索名称关键字:<input type="text" v-model="keywords">
+
+        <div class="header">
+            <div class="item">id</div>
+            <div class="item">name</div>
+            <div class="item">选项</div>
+        </div>
+
+        <div class="content" v-for="(item,index) in searchlist">
+            <div class="item">{{item.ID}}</div>
+            <div class="item">{{item.name}}</div>
+            <div class="item" @click="remove(index)" style="color:blue">删除</div>
+        </div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                ID:'',
+                name:"",
+                keywords:"",
+                list: [
+                    { name: '宝马', ID: 1 },
+                    { name: '大众', ID: 2 },
+                    { name: '奔驰', ID: 3 },
+                ]
+            },
+            methods: {
+                add(){
+                    //如果id和name填写了,将他们保存到数组
+                    if(this.ID&&this.name){
+                        this.list.push({ID:this.ID,name:this.name})
+                    }else{
+                        //否则显示提示信息
+                        alert('请输入完整的ID和name');
+                    }
+                },
+                search(){
+                    //搜索时使用过滤函数,保留包含搜索关键字的元素
+                    return this.list.filter(item=>{
+                        return item.name.includes(this.keywords);
+                    })
+                },
+                remove(index){
+                    //删除元素
+                    this.list.splice(index,1);
+                }
+            },
+            computed:{
+                searchlist(){
+                    return this.list.filter(item=>{
+                        return item.name.includes(this.keywords);
+                    }) 
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+       <!-- 
+           父组件使用@监听子组件自定义的事件foo,一旦事件被触发
+           执行回调函数fooMsg
+           注意:自定义事件名不要出现大写字母,否则会出现问题
+         -->
+      <btn @foo="fooMsg"></btn>
+   </div>
+   <template id="tem">
+       <div>
+           <button @click="foo">按钮</button>
+       </div>
+   </template>
+   <script>
+       Vue.config.productionTip=false;
+       Vue.component('btn',{
+           template:'#tem',
+           data(){
+               return{
+                
+               }
+           },
+           methods: {
+               foo(){
+                   /* 
+                   使用$emit方法触发事件
+                   第一个参数:自定义事件名,
+                   第二个参数:事件要传递的数据 
+                   */
+                   this.$emit('foo','hello');
+               }
+           },
+       })
+       var vm = new Vue({
+            el:'#app',
+            data:{
+      
+            },
+            methods: {
+                fooMsg(para){
+                  console.log("子组件的事件被触发了,参数是:",para);
+                }
+            },
+       })
+   </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 注意:自定义指令的时候不要加 'v-',但是使用指令的时候需要在指令前加 'v-' -->
+        <div v-big='num'></div>
+        <button @click='num++'>num加1</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 1
+            },
+
+            directives: {
+                big: {
+                    /*
+                    element:指令所在的真实dom元素
+                    binding:绑定对象,其中value属性是传入指令的值 
+                     */
+                    //指令与元素绑定时触发
+                    bind(element, binding) {
+
+                        element.innerHTML = binding.value * 10;
+                    },
+                    //指令所在元素被渲染插入到页面时触发
+                    inserted(element, binding) {
+
+                        element.innerHTML = binding.value * 10;
+
+                    },
+                    //指令所在vue模板更新时触发
+                    update(element, binding) {
+
+                        element.innerHTML = binding.value * 10;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+<style>
+
+    
+</style>
+</head>
+<body>
+   <div id='app'>
+       <!--
+           使用v-bind可以给标签绑定style样式
+           语法: :style="{属性名:属性值}" 属性名和属性值是字符串!!!
+           注意: :style="obj",obj是一个对象
+        -->
+
+        <!-- 下面两种写法都可以 -->
+       <div :style="{'color':'#666'}">云在青天水在瓶</div>
+       <div :style="styleObj">云在青天水在瓶</div>
+
+
+
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+                styleObj:{'color':'red'}
+            }
+       })
+   </script>
+</body>
+</html>

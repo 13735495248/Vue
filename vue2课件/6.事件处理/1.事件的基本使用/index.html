@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 
+            监听点击事件使用 v-on 指令
+            语法: v-on:click="函数名" 或者 v-on:click="js代码" 
+            也就是说click可以直接绑定方法名foo,也可以写js代码绑定foo() 
+            简写形式: @click="函数名" 或者 @click="js代码"
+            注意:vue中的方法全都要写在methods对象里面
+        -->
+        <!-- 两种写法都可以 -->
+        <button v-on:click="foo">按钮</button>
+        <button @click="foo()">按钮</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data(){
+                return{
+                    msg:'hello',
+                    a:1
+                }
+              
+            },
+            /* 
+            methods主要用来保存vue中的方法,方法都要写在methods中
+            methods方法中的this指向vue实例
+            注意:不能写成箭头函数,因为箭头函数this指向window,就获取不到
+            msg的值了,方法中的this指向vue实例vm
+             */
+            methods: {
+                foo(){
+                    console.log('a:',this.a);
+                    console.log('点击了按钮,并打印msg的值:',this.msg);
+                }
+                //简写形式
+                // foo(){
+
+                // }
+
+            },
+        })
+    </script>
+</body>
+
+</html>

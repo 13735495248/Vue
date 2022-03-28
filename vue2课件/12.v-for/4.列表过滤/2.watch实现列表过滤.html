@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="text" v-model='keywords' placeholder="请输入名字">
+        <div v-for="(item,index) in changeAry" :key="item.id">
+            <div>{{item.name}}-年龄{{item.age}}</div>
+        </div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                keywords:"",
+                list:[
+                   {id:1,name:'苏轼',age:34},
+                   {id:2,name:'苏辙',age:35},
+                   {id:3,name:'苏洵',age:36},
+                   {id:4,name:'曹操',age:37},
+                   {id:5,name:'曹植',age:38},
+                   {id:6,name:'曹丕',age:39},
+               ],
+               changeAry:[]
+            },
+            watch:{
+                keywords:{
+                    handler(newval,oldval){
+                        this.changeAry = this.list.filter(item=>{
+                        return item.name.includes(newval);
+                    })
+                    },
+                    immediate:true
+                }
+                    
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

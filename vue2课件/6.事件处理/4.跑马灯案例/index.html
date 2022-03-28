@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+     <div>{{msg}}</div>
+     <button @click="start">追小北</button>
+     <button @click="stop">停下来</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'小北，今天天气晴好，我现在在想你，但过一会儿可能会更想你.',
+                timerID:null,
+            },
+            methods: {
+                start(){
+                    //如果定时器存在,直接return跳出函数体
+                    if(this.timerID)return;
+                    this.timerID = setInterval(() => {
+                        //截取msg第一个字符
+                        let start = this.msg.substring(0,1);
+                        //截取除第一个以外剩下的字符串
+                        let end = this.msg.substring(1);
+                        //字符串拼接
+                        let str = end+start;
+                        this.msg = str;
+                    }, 500);
+                },
+
+                stop(){
+                    //清空定时器
+                    clearInterval(this.timerID);
+                    this.timerID = null;
+                }
+            },
+       })
+   </script>
+</body>
+</html>

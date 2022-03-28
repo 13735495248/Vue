@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div>
+            是不是月老孟婆前世是情人,一个牵了红丝,一个断了凡尘!
+            如果有来生,你愿意做月老还是孟婆?
+        </div>
+        <div style="color: red;">{{type}}</div>
+        <button @click='changeType'>点击切换类型</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true
+            },
+
+            methods: {
+                changeType() {
+                    this.flag = !this.flag;
+                }
+            },
+
+            computed:{
+                //计算属性简写形式
+                type(){
+                    return this.flag?'月老':'孟婆';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

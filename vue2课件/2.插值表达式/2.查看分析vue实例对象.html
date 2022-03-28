@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div>{{msg}}</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello'
+            }
+        })
+        /* 打印vue实例对象vm */
+        console.log('vm:',vm);
+        /* 
+        我们发现我们定义的属性msg好像添加到了vm对象上,我们通过vm.msg可以直接使用
+        我们还发现vm中的_data属性和data对象里面都有msg属性,他们好像是相同的
+        得出结论:我们可以直接使用vue实例对象 vm.属性名 获取data中的数据
+        (如vm.msg获取data中的msg属性值)
+        */
+    </script>
+</body>
+
+</html>

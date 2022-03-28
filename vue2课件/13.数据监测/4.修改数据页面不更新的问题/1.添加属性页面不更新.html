@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+      <div>姓名:{{person.name}}</div>
+      <div>年龄:{{person.age}}</div>
+      <button @click='change'>添加age属性</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              person:{
+                  name:'刘备',
+              }
+            },
+            methods: {
+                change(){
+                    /* 
+                    我们初始化在data中写的属性,vue会使用Object.defineProperty方法定义,
+                    vue将这些属性定义成响应式数据,也就是说我们更改属性,
+                    页面中使用到该属性的地方会自动更新,
+                    下面代码中的name来自初始化的data,是响应式,所以页面也会变化
+                    */
+                   this.person.name = 'dbb';
+                    /* 
+                    新添加的属性age没有被vue使用Object.defineProperty定义,因此它
+                    不是响应式数据,数据变化页面不会自动更新渲染
+                     */
+                   //this.person.age = 18; 
+                }
+            },
+       })
+   </script>
+</body>
+</html>

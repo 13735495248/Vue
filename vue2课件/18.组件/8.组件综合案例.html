@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            background-color: skyblue;
+        }
+
+        .container {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .default {
+            color: #666;
+            font-size: 14px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .select {
+            color: black;
+            font-size: 18px;
+        }
+
+        .list {
+            margin-left: 20px;
+        }
+
+        .recommend {
+            color: red;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 导航组件 -->
+        <mynav :title="title"></mynav>
+        <!-- 单选组件 -->
+        <mytab :titleary="ary" @change="change"></mytab>
+        <!-- 订阅列表 -->
+        <div class="list" v-show="flag">
+            <h2>订阅列表</h2>
+            <ul>
+                <li :class='{recommend:index===0?true:false}' v-for="(item,index) in subary">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+
+        <!-- 推荐列表 -->
+        <div class="list" v-show="!flag">
+            <h2>周杰伦</h2>
+            <ul>
+                <li v-for="(item,index) in recary">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 导航组件 -->
+    <template id='tem'>
+        <div class="header">{{title}}</div>
+    </template>
+    <!-- 单选组件 -->
+    <template id="tabtem">
+        <div class="container">
+            <div class="default" v-for="(item,index) in titleary" @click="change(index)"
+                :class="{select:selectIndex===index?true:false}">
+                {{item}}
+            </div>
+        </div>
+    </template>
+
+    <script>
+        //导航组件
+        Vue.component('mynav', {
+            template: '#tem',
+
+            props: {
+                title: {
+                    type: String,
+                    default: ''
+                }
+            }
+        })
+        //单选组件
+        Vue.component('mytab', {
+            template: '#tabtem',
+            data() {
+                return {
+                    selectIndex: 0
+                }
+            },
+            methods: {
+                change(i) {
+                    this.selectIndex = i;
+                    this.$emit('change', i);
+
+                }
+            },
+            props: {
+                titleary: {
+                    type: Array,
+                    /* 当type是对象和属性的时候必须以函数返回值的形式返回默认数组或对象 */
+                    default: function () { return [] }
+                }
+            }
+        })
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    title: '首页',
+                    ary: ['订阅', '推荐'],
+                    flag: true,
+                    subary: [
+                        '伊桑和邵桑的幸福生活!(编辑强烈推荐!!!)',
+                        '张君的二手烟之旅!',
+                        '肆少与维生素不能说的秘密!',
+                        '戴高李之学霸姐妹养成记!',
+                        '王者闫上单封神之路!',
+                        '先龙游学记之沉默是金!',
+                        '皋先生休闲日记王者荣耀篇',
+                        '黄同学上课记之老师我也好了!',
+                        '乱世重生修仙成神之请叫我辉先生!'
+                    ],
+                    recary: [
+                        '东风破',
+                        '七里香',
+                        '晴天',
+                        '不能说的秘密',
+                        '稻香',
+                        '双节棍',
+                        '龙拳',
+                        '龙卷风',
+                        '红尘客栈'
+
+                    ]
+                }
+            },
+
+            methods: {
+                change(index) {
+                    switch (index) {
+                        //订阅
+                        case 0:
+                            this.flag = true
+
+                            break;
+                        //推荐
+                        case 1:
+                            this.flag = false
+
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <div>{{msg}}</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        /* 第一种写法:对象形式 这种写法在使用组件的时候存在一些问题,后面我们再分析 */
+        //    const vm = new Vue({
+        //         el:'#app',
+        //         data:{
+        //           msg:'hello'
+        //         }
+        //    })
+
+        /* 第二种写法:返回值是对象的函数形式 */
+        // const vm = new Vue({
+        //     el: '#app',
+        //     data: function(){
+        //         return {
+        //             msg:'hello'
+        //         }
+        //     }
+        // })
+
+        /* 第二种写法的ES6简写形式 框架中这种写法用的多 */
+        const vm = new Vue({
+            el: '#app',
+            data(){
+                return {
+                    msg:'hello'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

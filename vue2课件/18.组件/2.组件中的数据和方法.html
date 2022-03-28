@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <num></num>
+    </div>
+
+    <template id="tem">
+        <!-- 组件模板中使用数据只能从对应组件去找,不能去父组件或者其他组件去找 -->
+        <div>
+            <div>
+                {{num}}
+            </div>
+            <button @click="add">增加1</button>
+        </div>
+
+    </template>
+    <script>
+        Vue.config.productionTip = false;
+        /* 
+        组件配置对象中的属性和Vue构造函数中的几乎一样,都有data,methods等属性
+        vue实例所对应的vue模板也可以理解成是一个父组件,模板里面的组件是其子组件
+        */
+        Vue.component('num', {
+            template: '#tem',
+            data() {
+                return {
+                    num: 1
+                }
+            },
+
+            methods: {
+                add() {
+                    this.num++;
+                }
+            },
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 99
+            }
+        })
+    </script>
+</body>
+
+</html>

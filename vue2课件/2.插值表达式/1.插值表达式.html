@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+    <!-- 1.容器和vue实例是一对一的关系 一个容器只能关联一个vue实例 否则会报错 -->
+   <div id='app'>
+       <div>我叫{{name}}</div>
+   </div>
+  
+   <script>
+       /*
+       {{表达式}} 我们称为插值表达式 即插入表达式的值 里面传入表达式 
+       表达式的值可以在页面显示出来
+       注意区分表达式和语句：
+           1.表达式:表达式可以生成一个值 放在任何一个需要值的地方
+           如何判断一串代码是不是表达式：
+               a.左边用变量可以接收的是表达式
+               b.可以写在if()后面的圆括号里面的一般都是表达式
+            表达式举例:(1)a
+                      (2)a+b
+                      (3)x===y?1:2
+                      (4)fun()
+            2.js语句:
+                (1)if(){}
+                (2)for(){}
+        */
+       /* 注意:插值表达式里面可以直接使用data里面所有的属性 */
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              name:'刘备'
+            }
+       })
+
+   </script>
+</body>
+</html>

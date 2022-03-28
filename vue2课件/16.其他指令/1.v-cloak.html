@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+   <style>
+      [v-cloak]{
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <!-- 
+      v-cloak可以解决网速慢的情况下页面显示插值表达式原码花括号的问题
+      原理:v-cloak指令可以给标签添加v-cloak属性配合css的display:none隐藏
+      标签,当实例加载完毕会将v-cloak属性从标签移除
+    -->
+   <div v-cloak id='app'>
+     {{name}}
+   </div>
+   <!-- 延迟加载vue.js文件 -->
+   <script src='http://127.0.0.1:3000/vue.js'></script>
+   <script>
+      
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+               name:'刘备'
+       
+            }
+       })
+   </script>
+</body>
+</html>

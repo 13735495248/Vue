@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+       <div>{{num}}</div>
+       <div v-big='num'></div>
+       <button @click='num++'>num加1</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       /* 全局定义的指令所有组件都可以使用 */
+       Vue.directive('big',(element,binding)=>{
+        element.innerHTML = binding.value*10;
+       })
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              num:1
+            },
+       })
+   </script>
+</body>
+</html>

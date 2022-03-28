@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script src='../vue.js'></script>
+    <title>扫地小孩专属模板</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- 
+            v-if可以控制标签显示隐藏 
+            语法:v-if="结果是bool类型的表达式"
+            v-if显示隐藏原理:v-if通过销毁,创建元素来达到显示隐藏的效果
+        -->
+        <div v-if="flag">{{msg}}</div>
+        <button @click="showMsg">v-show显示隐藏文字</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                flag: true,
+                msg: "我是可以隐藏的文字,不信你点击下面的按钮试试."
+            },
+            methods: {
+                showMsg(){
+                    this.flag = !this.flag;
+                    this.msg='我又出现了';
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

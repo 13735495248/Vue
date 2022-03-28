@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .title{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+        <div id="app">
+            <comment @submit="submitmsg"></comment>
+
+            <div v-for="item in list">
+                <div>评论人:{{item.name}},评论内容{{item.content}}</div>
+            </div>
+        </div>
+
+        <template id="tem">
+            <div>
+                <div>
+                    <label>评论人:</label>
+                    <input type="text" v-model="name">
+                </div>
+
+                <div>
+                    <label>评论内容:</label>
+                    <input type="text" v-model='content'>
+                </div>
+
+                <input type="button" value="发表评论" @click="submit">
+            </div>
+        </template>
+
+        <script>
+            Vue.component('comment',{
+                template:"#tem",
+                data(){
+                    return {
+                        name:'',
+                        content:'',
+                        list:[],
+
+                    }
+                },
+
+                methods: {
+                    submit(){
+                        if(!this.name||!this.content)return
+                        this.list.push({name:this.name,content:this.content});
+                        this.$emit('submit', this.list);
+                        //发表完评论清空输入框
+                        this.name = '';
+                        this.content = '';
+
+                    }
+                },
+            });
+            let vm = new Vue({
+                el:"#app",
+                data(){
+                   return {
+                   list:[]
+                  }  
+                },
+
+                methods: {
+                    submitmsg(para){
+                        this.list = para;
+
+                    }
+                },
+            })
+        </script>
+</body>
+</html>

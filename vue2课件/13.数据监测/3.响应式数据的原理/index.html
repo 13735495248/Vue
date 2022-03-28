@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+    <!-- 
+        什么是响应式数据?
+          在vue中数据变化,vue能知道数据变化了,并且会自动修改与数据绑定的标签属性,
+          这种数据变页面自动变化的数据,我们称为响应式数据. vue的响应式数据实质是
+          使用Object.defineProperty方法定义数据,当数据被修改变化时,defineProperty
+          中的set方法会被触发,vue会在set方法里面去进行dom操作,去修改与数据绑定的dom属性,
+          从而达到我们看到的数据变页面自动更新的效果!
+
+          注意:在vue中查看某个属性是不是响应式的,就看这个属性有没有被Object.defineProperty
+          方法定义(被该方法定义的属性显示的是(...)),如果有则是响应式的,否则不是响应式数据.
+     -->
+   <div id='app'>{{name}}</div>
+   <script>
+      let vm = {
+          el:"#app",
+          _data:{
+              name:'hello vue'
+          }
+      }
+      //获取id是app的dom元素的innerHTML内容
+      let innerStr = document.querySelector("#app").innerHTML;
+      //提取插值表达式{{msg}}中的属性名name
+      let nameStr = innerStr.substring(2,innerStr.length-2);
+      //将name渲染到页面
+      document.querySelector("#app").innerHTML = vm._data[nameStr];
+      //vm代理_data中name属性的读写,当name被修改时,重新设置dom的innerHTML渲染页面
+      Object.defineProperty(vm,nameStr,{
+          get(){
+              return vm._data.name;
+          },
+          set(value){
+            document.querySelector("#app").innerHTML = value;
+              vm._data.name = value;
+          }
+      })
+      /*
+      在vue中通过Object.defineProperty定义的属性都是响应式数据,也就是说,当这些数据变化时,
+      set方法会被调用,vue会去操作dom,更新渲染页面,因此达到了,在vue中更改数据页面也自动更新
+      的效果!
+
+      通过vm代理_data里面所有的属性 这样的目的是为了简化代码
+      我们获取name本来需要vm._data.name这样操作
+      代理后只需要vm.name这样简单取值 
+      */
+   </script>
+</body>
+</html>

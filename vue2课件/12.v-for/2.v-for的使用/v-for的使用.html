@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+       <!-- 
+           item是元素值,index是元素对应的索引
+           key给每个节点添加唯一标志,注意key只能是String和Number类型
+           注意:
+           item和index可以直接在当前元素块里的插值表达式中使用
+        -->
+     <div v-for="(item,index) in list" :key="index">{{index}}:{{item.name}}</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {name:'刘备'},
+                    {name:'关羽'},
+                    {name:'张飞'},
+                ]
+      
+            }
+       })
+   </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+    <!-- 
+       title属性的值是一个 字符串,是写死的,比较呆板,如果我们想随时变化title属性的值,意味着
+       title属性的值应该是个变量或者表达式,我们需要怎么操作呢?需要使用Vue中的v-bind指令.
+    -->
+    <div title="这是一个普通的div">hello</div>
+    <!-- 
+       v-bind指令:
+       绑定html的属性,绑定之后,属性的值就可以写 表达式 了,并且属性的值可以
+       使用所有data中的数据!!!
+       绑定语法: v-bind:属性名="表达式"
+       简写形式: :属性名="表达式"
+    -->
+    <div id="vue" v-bind:title="msg">vue</div>
+    <!-- 这样写能看懂吗? -->
+    <div v-bind:title="msg1()">yes</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              msg:'这是一个通过v-bind绑定了属性的div',
+              msg1:function(){return '这是一个通过v-bind绑定了属性值为函数的div'}
+            }
+       });
+       /* 
+       v-bind是单向数据绑定,那么什么是单向数据绑定? 
+       它的本质其实是修改绑定的data中的数据,html属性会自动变化,但是修改html属性,
+       绑定的data中的属性不会自动变化.
+       在控制台演示
+       */
+       
+   </script>
+</body>
+</html>

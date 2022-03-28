@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+   <style>
+       .default{
+           background-color: skyblue;
+           font-size: 20px;
+       }
+       .redcolor{
+           color: red;
+       }
+   </style>
+</head>
+<body>
+   <div id='app'>
+      <div class="default" :class="{'redcolor':flag}">hello vue</div>
+      <button @click="changeType">切换样式</button>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+               flag:false
+            },
+
+            methods: {
+                changeType(){
+                    this.flag = !this.flag;
+                }
+            },
+       })
+   </script>
+</body>
+</html>

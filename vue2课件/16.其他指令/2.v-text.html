@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+   <title>扫地小孩专属模板</title>
+</head>
+<body>
+    <!-- 
+        v-text="表达式" 替换标签的文本内容
+        将表达式值当做普通文本渲染
+        使用v-text也可以解决插值表达式闪屏问题
+    -->
+   <div id='app'>
+     <div v-text="msg">123</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+              msg:'<h1>hello</h1>'
+            }
+       })
+   </script>
+</body>
+</html>

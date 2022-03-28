@@ -1,0 +1,2 @@
+## 引入js文件顺序总结
+一般来说我们会将引入js的script标签放在head中,但是如果js文件中有dom操作则需要将js文件引入放到body标签的最后或者使用异步js文件引入属性defer(async)也是可以的

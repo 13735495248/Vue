@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <script src='../vue.js'></script>
+<title>扫地小孩专属模板</title>
+</head>
+<body>
+   <div id='app'>
+     <label>姓:</label><input v-model='firstname' type="text">
+     <label>名:</label><input v-model='lastname' type="text">
+     <div>全名:{{fullname}}</div>
+   </div>
+   <script>
+       Vue.config.productionTip=false;
+       var vm = new Vue({
+            el:'#app',
+            data:{
+               firstname:'',
+               lastname:''
+            },
+            methods:{
+               
+            },
+            computed:{
+            //    fullname:{
+            //    //当有人读取fullname时 get会被调用 返回值就是fullname的值
+            //    get(){
+            //       console.log('调用了计算属性fullname');
+            //      let fullnamestr = this.firstname + '-'+this.lastname;
+            //      return fullnamestr;
+            //    },
+            //    //当有人设置fullname的值时 set会被调用
+            //    set(newval){
+            //       this.firstname = newval;
+            //       this.lastname = newval;
+            //    }
+
+            /* 
+            简写:当计算属性只存在get方法时可以简写 
+            注意:虽然计算属性形式是函数形式,但是它是属性,使用的时候
+            直接使用fullname不能fullname()这样使用
+            */
+            fullname(){
+                 console.log('调用了计算属性fullname');
+                 let fullnamestr = this.firstname +this.lastname;
+                 return fullnamestr;
+            }
+ 
+              
+        }
+
+       })
+   </script>
+</body>
+</html>
