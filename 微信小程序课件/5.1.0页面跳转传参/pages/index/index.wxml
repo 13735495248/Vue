@@ -1,0 +1,4 @@
+
+<view class="container">
+  <button bindtap="foo">去登录页</button>
+</view>

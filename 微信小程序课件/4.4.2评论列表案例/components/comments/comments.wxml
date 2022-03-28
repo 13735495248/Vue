@@ -1,0 +1,11 @@
+<view class="comments">
+    <view>
+        评论人:
+        <input model:value="{{name}}" type="text" />
+    </view>
+    <view>
+        评论内容:
+        <input model:value="{{content}}" type="text" />
+    </view>
+    <button bind:tap="comment">评论</button>
+</view>

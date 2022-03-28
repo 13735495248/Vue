@@ -1,0 +1,7 @@
+<view class="container">
+  <input 
+  type="text" 
+  bindinput="foo" 
+  placeholder="请输入内容" />
+  <view>显示:{{msg}}</view>
+</view>

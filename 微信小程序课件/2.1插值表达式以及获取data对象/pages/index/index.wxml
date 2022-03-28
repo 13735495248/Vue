@@ -1,0 +1,12 @@
+
+<view class="container">
+    <!-- 
+        小程序中的插值表达式{{表达式}}
+        data-id="{{num}}",小程序会从js文件的data中寻找
+        变量num
+        data-id="num",data-id的值就是字符串"num"
+    -->
+    <button bindtap="foo" data-id="{{num}}">按钮</button>
+    <!-- 插值表达式将data中数据显示到页面 -->
+    <view>{{msg}}</view>
+</view>

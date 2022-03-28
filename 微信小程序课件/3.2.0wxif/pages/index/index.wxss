@@ -1,0 +1,3 @@
+.btnbg {
+  display: flex;
+}

@@ -1,0 +1,8 @@
+input{
+    border: 2rpx solid #999;
+    margin: 20rpx;
+}
+.comments{
+    border: 2rpx solid skyblue;
+    margin: 20rpx;
+}

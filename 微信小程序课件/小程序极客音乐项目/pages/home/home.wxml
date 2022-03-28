@@ -1,0 +1,58 @@
+<swiper indicator-dots="{{true}}" indicator-active-color="#00e09e" indicator-color="white" autoplay="{{true}}">
+  <swiper-item wx:for="{{banners}}">
+    <image mode="widthFix" class="banner-img" src="{{item.imageUrl}}"></image>
+  </swiper-item>
+</swiper>
+<!-- 首页小图标 -->
+<scroll-view class="scroll" style="white-space:nowrap" scroll-x="{{true}}">
+  <view class="menu-item" wx:for="{{menus}}">
+    <view class="item" bindtap="clickmenu" data-item="{{item}}">
+      <image class="menu-img" src="{{item.iconUrl}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 分割线 -->
+<view class="line"></view>
+
+<!-- 推荐歌曲 -->
+<view class="recommend">
+  <view class="header">
+    <text class="title">推荐歌单</text>
+  </view>
+
+  <scroll-view class="scroll" style="white-space:nowrap" scroll-x="{{true}}">
+    <view class="recommend-item" wx:for="{{recommendsongs}}">
+      <view class="item" bindtap="clickrecommend" data-item="{{item}}">
+        <image class="recommend-img" src="{{item.picUrl}}"></image>
+        <text class="content">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+
+<view class="recommend">
+  <view class="header">
+    <text class="title">歌手榜</text>
+    <text class="more" bindtap="moreSinger">更多</text>
+  </view>
+  <!-- 
+    circular:衔接滑动
+    next-margin:后面露出一点
+    previous-margin:前面露出一点
+  -->
+  <swiper class="toplist" circular next-margin="50px" previous-margin="50px">
+    <swiper-item class="item" wx:for="{{toplist}}">
+      <image class="img" mode="widthFix" src="{{item.picUrl}}"></image>
+      <view class="info">
+        <text class="order">第{{index+1}}名</text>
+        <text class="name">{{item.name}}</text>
+      </view>
+
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="blank"></view>

@@ -1,0 +1,4 @@
+
+<view class="container">
+  <button bindtap="foo" data-id="9527">按钮</button>
+</view>

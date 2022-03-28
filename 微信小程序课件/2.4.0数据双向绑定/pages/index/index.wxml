@@ -1,0 +1,12 @@
+<view class="container">
+  <!-- 
+  model:value 对input进行数据双向绑定,类似vue的model 
+  注意:
+    input需要设置结束标签(或者自结束标签),否则会报错.
+  -->
+  <input 
+  type="text" 
+  model:value="{{msg}}" 
+  placeholder="请输入内容" />
+  <view>显示:{{msg}}</view>
+</view>

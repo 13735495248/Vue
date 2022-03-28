@@ -1,0 +1,8 @@
+<view>
+  <!-- 
+    使用myname组件,使用前需要先去json文件usingComponents中注册组件 
+  -->
+  <myname></myname>
+</view>
+  
+

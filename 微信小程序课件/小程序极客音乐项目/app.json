@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/singers/singers",
+    "pages/index/index",
+    "pages/home/home",
+    "pages/my/my",
+    "pages/webview/webview",
+    "pages/video/video",
+    "pages/search/search",
+    "pages/playlist/playlist"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00e09e",
+    "navigationBarTitleText": "极客音乐",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/static/images/tabs/home.png",
+        "selectedIconPath": "/static/images/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/static/images/tabs/video.png",
+        "selectedIconPath": "/static/images/tabs/video-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/static/images/tabs/my.png",
+        "selectedIconPath": "/static/images/tabs/my-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

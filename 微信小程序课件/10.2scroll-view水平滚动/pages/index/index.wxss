@@ -1,0 +1,12 @@
+.default{
+  background: blue;
+  width: 200px; 
+  height: 100px; 
+  display: inline-block;
+}
+.select{
+  background: red;
+  width: 200px; 
+  height: 100px; 
+  display: inline-block;
+}

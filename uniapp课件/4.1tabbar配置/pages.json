@@ -1,0 +1,73 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/main",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/choose",
+			"style": {
+				"navigationBarTitleText": "精选"
+			}
+		},
+		{
+			"path": "pages/cart",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"tabBar": {
+		//tabbar的文字默认颜色，HexColor(16进制:#xxxxxx)
+		"color": "#000000",
+		//tabbar 上的文字选中时的颜色，HexColor
+		"selectedColor": "#F0AD4E",
+		//tabbar 的背景色，HexColor
+		"backgroundColor": "transparent",
+		//tabBar上边框的颜色， 仅支持 black/white
+		"borderStyle": "black",
+		"list": [{
+			     /* tabbar上的文字 */
+				"text": "首页",
+				/* 选中tabbar按钮对应的页面 */
+				"pagePath": "pages/main",
+				/* tabbar默认的图片 */
+				"iconPath": "static/tabbar/main.png",
+				/* tabbar选中时的图片 */
+				"selectedIconPath": "static/tabbar/mainselect.png"
+			},
+			{
+				"text": "精选",
+				"pagePath": "pages/choose",
+				"iconPath": "static/tabbar/choose.png",
+				"selectedIconPath": "static/tabbar/chooseselect.png"
+			},
+			{
+				"text": "购物车",
+				"pagePath": "pages/cart",
+				"iconPath": "static/tabbar/cart.png",
+				"selectedIconPath": "static/tabbar/cartselect.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my",
+				"iconPath": "static/tabbar/my.png",
+				"selectedIconPath": "static/tabbar/myselect.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+    <style>
+        /* 
+        transition的用法
+        transition: 属性名 持续时间 速度曲线 延迟时间
+
+        哪些属性可以进行transition过渡设置?
+          颜色,大小,位置几乎都可以,如color,background-color,width,height
+          opacity,top,right等
+
+          注意:
+            transition一般写在元素中,而不写在伪类中,如下面的transition过渡,
+            写在元素中鼠标放在元素上和离开元素都有过渡效果,如果写在伪类:hover中,
+            只有鼠标滑上去有效果,离开就不会有过渡动画效果了
+        */
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: all 1s ease;
+            
+        }
+        .box:hover{
+            width: 200px;
+            background-color: aqua;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+<view>
+  <!-- 
+    父组件绑定子组件自定义的事件send,当子组件使用triggerEvent
+    触发了自定义事件,foo函数会被执行
+    父绑定子的自定义事件: bind:自定义事件名(类似vue中的子传父 @事件名,
+    父监听子组件事件)
+  -->
+  <myname bind:send="foo"></myname>
+</view>
+  
+

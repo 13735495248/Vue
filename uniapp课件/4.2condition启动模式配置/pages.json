@@ -1,0 +1,49 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/target1",
+			"style": {
+				"navigationBarTitleText": "target1"
+			}
+		},
+		{
+			"path": "pages/target2",
+			"style": {
+				"navigationBarTitleText": "target2"
+			}
+		}
+	],
+	/* 
+	condition的作用:
+	没有condition之前,启动小程序会跳到默认页(pages.json中pages的第一个),
+	假如开发者正在开发层次很深的一个页面,比如首页-----模块1----子模块1-----目标页面,
+	这样得点击好几次才能跳到目标页面,我们就想,如果启动小程序一下跳到目标页面,
+	而不用去修改默认首页(正常拉起小程序的首页),就完美了,condition可以实现这个功能
+	注意:condition启动模式配置，仅开发期间生效,打包成生产包时该功能会过滤掉
+	*/
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)，比如1是激活mode2
+		"list": [{
+			"name": "mode1", //模式名称
+			"path": "pages/target1", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}, {
+			"name": "mode2", //模式名称
+			"path": "pages/target2", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	},
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

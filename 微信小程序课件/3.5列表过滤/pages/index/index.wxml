@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+  <input type="text" bindinput="change" model:value="{{keywords}}" />
+  <view class='list'>
+    <view class="item" wx:for="{{list}}" wx:key="name">
+    {{item.name}},{{item.age}}岁
+    </view>
+  </view>
+</view>

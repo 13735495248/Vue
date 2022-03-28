@@ -1,0 +1,22 @@
+<!-- 小程序内联样式和原生css写法一样 -->
+<view style="color: red;font-size: 60rpx;">
+  hello 
+</view>
+<!-- 
+    小程序可以通过插值表达式动态设置内联样式
+    注意:
+      插值表达式需要是 字符串 类型,如果font-size后面
+      写{{60rpx}}会报错,因为60rpx既不属于某种数据类型,
+      也不属于data中的属性,因此出错
+-->
+<view style="color: {{'red'}};font-size: {{'60rpx'}};">
+    world
+</view>
+
+<!-- 
+下面font-size的写法也是可以的,插值表达式内容是数字60,
+结合后面的rpx,就是60rpx
+-->
+<view style="color: {{'red'}};font-size: {{60}}rpx;">
+    friend
+</view>

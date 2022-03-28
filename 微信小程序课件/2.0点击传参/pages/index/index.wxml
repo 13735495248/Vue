@@ -1,0 +1,19 @@
+
+<view class="container">
+  <!-- 
+    绑定点击事件bind:tap 简写:bindtap
+    bindtap类似vue中的@click
+
+    data-xxx:用来自定义属性名,点击按钮时可以获取到
+    自定义属性名data-xxx对应的属性值,从而实现点击
+    按钮传递参数的功能
+
+    注意:
+      bindtap="?",?处只能写方法名foo,不能加圆括号,
+      如foo(),这样是错误的写法
+  -->
+  <view bindtap="foo1">
+    <button bindtap="foo2" data-id="9527">按钮</button>
+  </view>
+  
+</view>

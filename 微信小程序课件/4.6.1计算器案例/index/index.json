@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "calc":"../components/calc/calc",
+    "calc1":"../components/calc1/calc",
+    "calc2":"../components/calc2/calc"
+  }
+}

@@ -1,0 +1,11 @@
+<template>
+	<view class="my">
+		<text>ÎÒµÄ</text>
+	</view>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>

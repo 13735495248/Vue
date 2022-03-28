@@ -1,0 +1,24 @@
+<view class="brand">
+id: <input type="text" model:value="{{id}}"/>
+name: <input type="text" model:value="{{name}}"/>
+<button bindtap="add">添加</button>
+搜索关键字:
+<input type="text" bindinput="search" model:value="{{keywords}}"/>
+</view>
+
+<view class="menu">
+  <view>id</view>
+  <view>name</view>
+  <view>操作</view>
+</view>
+
+<view class="list" wx:for="{{changeAry}}">
+  <view>{{item.id}}</view>
+  <view>{{item.name}}</view>
+  <view 
+  data-index="{{index}}"
+  bindtap="dele" 
+  style="color:blue;">删除</view>
+</view>
+  
+

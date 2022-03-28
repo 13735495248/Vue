@@ -1,0 +1,22 @@
+.list{
+  display: flex;
+  align-items: center;
+}
+.list .item{
+  display: flex;
+  align-items: center;
+  margin-left: 10rpx;
+}
+.list .item .text{
+  margin-left: 4rpx;
+}
+
+.default{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 5rpx solid #999;
+}
+.select{
+  background-color: #00b26a;
+}

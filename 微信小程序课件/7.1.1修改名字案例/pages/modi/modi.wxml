@@ -1,0 +1,2 @@
+<input model:value="{{name}}" type="text"/>
+<button bind:tap="modi">确定修改</button>

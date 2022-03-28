@@ -1,0 +1,10 @@
+.search{
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    border: 2rpx solid skyblue;
+    margin: 20rpx;
+}
+.search input{
+    border: 2rpx solid #999;
+}

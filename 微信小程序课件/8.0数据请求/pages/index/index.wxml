@@ -1,0 +1,14 @@
+<view class="container">
+  <view>随机文本:{{text}}</view>
+  <button bindtap="rantext">请求随机文本接口</button>
+
+  <input type="text" 
+  model:value="{{keywords}}" 
+  placeholder="请输入三国人物">
+</input>
+  <view wx:for="{{list}}" wx:key="{{name}}">
+    姓名:{{item.name}},样貌:{{item.lookslike}}
+  
+  </view>
+  <button bindtap='search' >搜索</button>
+</view>

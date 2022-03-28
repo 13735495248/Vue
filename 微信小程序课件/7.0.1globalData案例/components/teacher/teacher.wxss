@@ -1,0 +1,9 @@
+.teacher{
+    border: 2rpx solid skyblue;
+    padding: 20rpx;
+    margin: 20rpx;
+}
+.teacher .title{
+    font-size: 40rpx;
+    font-weight: bold;
+}

@@ -1,0 +1,5 @@
+
+<view class="container">
+  <view>姓名:{{myname}}</view>
+  <button bindtap="foo">去登录页</button>
+</view>

@@ -1,0 +1,7 @@
+<!--局部垂直滚动，这里必须设置高度-->
+<scroll-view scroll-y="{{true}}" style="height: 200px">
+    <view style="background: red; width: 100px; height: 100px"></view>
+    <view style="background: green; width: 100px; height: 100px"></view>
+    <view style="background: blue; width: 100px; height: 100px"></view>
+    <view style="background: yellow; width: 100px; height: 100px"></view>
+  </scroll-view>

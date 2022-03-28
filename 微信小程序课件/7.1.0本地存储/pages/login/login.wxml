@@ -1,0 +1,3 @@
+<view>姓名:{{myname}}</view>
+<button bindtap="getdata">取数据</button>
+<button bind:tap="back">回首页</button>

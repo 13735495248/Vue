@@ -1,0 +1,4 @@
+<comments bind:send="foo"></comments>
+<view wx:for="{{list}}">
+评论人:{{item.name}},评论内容:{{item.content}}
+</view>

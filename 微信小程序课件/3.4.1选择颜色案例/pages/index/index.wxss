@@ -1,0 +1,16 @@
+.list{
+  display: flex;
+  align-items: center;
+}
+
+.list .item{
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.list .item .default{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border: 4rpx solid #999;
+}

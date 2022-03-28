@@ -1,0 +1,12 @@
+.default{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select{
+  background-color:skyblue;
+}

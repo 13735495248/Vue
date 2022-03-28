@@ -1,0 +1,13 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail .title{
+    font-size: 34rpx;
+    font-weight: bold;
+    margin: 20rpx;
+}
+.detail .content{
+   margin: 20rpx;
+}

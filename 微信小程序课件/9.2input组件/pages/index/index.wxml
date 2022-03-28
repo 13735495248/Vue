@@ -1,0 +1,12 @@
+
+<view class="container">
+  <!--
+    微信小程序中的input的type值只有下面四种：
+        text	文本输入键盘	
+        number	数字输入键盘	
+        idcard	身份证输入键盘	
+        digit	带小数点的数字键盘
+  -->
+    <input class="input1" type="idcard" placeholder="请输入内容">
+    </input>
+</view>

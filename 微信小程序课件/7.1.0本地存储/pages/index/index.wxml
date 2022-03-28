@@ -1,0 +1,5 @@
+
+<view class="container">
+  <button bindtap="save">存数据</button>
+  <button bindtap="foo">去登录页</button>
+</view>

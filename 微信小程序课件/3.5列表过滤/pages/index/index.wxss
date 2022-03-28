@@ -1,0 +1,10 @@
+.list {
+  padding: 40rpx;
+  margin: 40rpx;
+  border: 1px solid skyblue;
+}
+
+input{
+  margin:40rpx;
+  border: 1px solid #999;
+}

@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+  }
+  input{
+    border: 2rpx solid #999;
+    width: 120rpx;
+  }

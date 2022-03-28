@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "mysum":"/components/mysum/mysum"
+    }
+}

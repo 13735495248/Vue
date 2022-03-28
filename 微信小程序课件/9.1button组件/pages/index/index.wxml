@@ -1,0 +1,18 @@
+<view class="container">
+  <!-- 打开客服对话框 -->
+  <button bindcontact="contact" open-type="contact">客服</button>
+  <!-- 分享页面 -->
+  <button open-type="share">分享</button>
+  <!-- 需要权限认证否则获取不到手机号 -->
+  <button open-type="getPhoneNumber" bindgetphonenumber="getphonenumber">
+  获取手机号
+  </button>
+  <!-- 获取用户信息 -->
+  <button bindgetuserinfo="getuserinfo" open-type="getUserInfo">
+  获取用户信息
+  </button>
+  <!-- 打开授权设置页面 -->
+  <button open-type="openSetting">打开授权设置页</button>
+  <!-- 打开反馈页面 -->
+  <button open-type="feedback">打开反馈页面</button>
+</view>

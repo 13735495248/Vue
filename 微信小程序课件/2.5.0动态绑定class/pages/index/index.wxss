@@ -1,0 +1,6 @@
+.default{
+  background: #999;
+}
+.select{
+  background: red;
+}

@@ -1,0 +1,10 @@
+
+<view class="container">
+  <view class="title">实时要闻</view>
+  <view
+  class="list"
+  bind:tap="godetail" data-item="{{item}}"
+  wx:for="{{news}}">
+    {{item.title}}
+  </view>
+</view>

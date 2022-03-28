@@ -1,0 +1,5 @@
+<view class="teacher">
+  <view class="title">老师组件</view>
+  <view>分数:{{score}}</view>
+  <button bind:tap="modi">修改分数</button>
+</view>

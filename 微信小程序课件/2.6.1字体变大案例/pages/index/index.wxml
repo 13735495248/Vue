@@ -1,0 +1,4 @@
+<view style="font-size: {{font}}rpx;">
+hello
+</view>
+<button bindtap="change">字体变大</button>

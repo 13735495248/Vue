@@ -1,0 +1,25 @@
+.container{
+  background-color: #eee;
+}
+.item{
+  height: 160rpx;
+  background-color: skyblue;
+  margin-top: 2rpx;
+  display: flex;
+  align-items: center;
+}
+.item .icon{
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+}
+
+.des image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+
+}
+.des .rank{
+  margin-left: 20rpx;
+}

@@ -1,0 +1,71 @@
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+  border: 1px solid #ddd;
+  margin: 20rpx;
+  border-radius: 30rpx;
+  color: #666;
+}
+.search image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.scroll{
+  display: flex;
+  white-space: nowrap;
+  height: 60rpx;
+}
+.scroll .item{
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.scroll .item .title{
+  font-size: 14px;
+}
+.scroll .item .title.select{
+  font-size: 16px;
+  border-bottom: 6rpx solid #00e09e;
+}
+.videoScroll{
+  margin-top: 10rpx;
+  height: calc(100vh - 60rpx - 114rpx);
+}
+.videoScroll .videoItem .myImg{
+  width: calc(100% - 40rpx);
+  margin: 10rpx 20rpx;
+  height: 360rpx;
+  border-radius: 15rpx;
+}
+.videoScroll .videoItem .title{
+  margin: 0 20rpx;
+  font-size: 18px;
+  font-weight: bold;
+}
+.des{
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 20rpx;
+}
+.des .left{
+  display: flex;
+  align-items: center;
+}
+.des .left image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  margin-right: 20rpx;
+}
+.noti{
+  display: flex;
+  color: blue;
+  font-weight: bold;
+  justify-content: center;
+  font-size: 40rpx;
+  margin-top: 100rpx;
+}

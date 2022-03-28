@@ -1,0 +1,3 @@
+姓:<input bindinput="firstmsg" type="text"/>
+名:<input bindinput="lastmsg" type="text"/>
+<view>姓名:{{firstname+lastname}}</view>

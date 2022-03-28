@@ -1,0 +1,6 @@
+<view class="{{index==selectIndex?'default select':'default'}}"
+wx:for="{{list}}"
+bindtap="foo" data-index="{{index}}"
+>
+{{item}}
+</view>

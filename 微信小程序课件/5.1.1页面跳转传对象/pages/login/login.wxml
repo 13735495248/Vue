@@ -1,0 +1,1 @@
+<button bind:tap="back">回首页</button>

@@ -1,0 +1,9 @@
+<view>请选择您的职业</view>
+<button bindtap="changeZS">战士</button>
+<button bindtap="changeFS">法师</button>
+<button bindtap="changeCK">刺客</button>
+
+<image wx:if="{{type == 1}}" style="width: 100%;" src="../images/zs.png"></image>
+<image wx:elif="{{type == 2}}" style="width:100%" src="../images/fs.png"></image>
+<image wx:elif="{{type == 3}}" style="width: 100%;" src="../images/ck.png"></image>
+<view wx:else style="color: #666;">您暂未选择职业!</view>

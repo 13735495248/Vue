@@ -1,0 +1,5 @@
+<view class="student">
+  <view class="title">学生组件</view>
+  <view>分数:{{score}}</view>
+</view>
+

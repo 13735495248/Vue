@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "myname":"/components/myname/myname"
+    },
+    "navigationBarTitleText":"首页"
+}

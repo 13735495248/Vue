@@ -1,0 +1,7 @@
+<view style="color: {{index%2==0?'red':'blue'}};" wx:for="{{list}}" wx:key="*this">
+  {{item}}
+</view>
+
+<view class="{{index%2==0?'red-text':'blue-text'}}" wx:for="{{list}}" wx:key="*this">
+  {{item}}
+</view>

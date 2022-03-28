@@ -1,0 +1,3 @@
+<!--components/myname/myname.wxml-->
+<text>myname组件</text>
+<view>姓名:{{name}}</view>

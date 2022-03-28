@@ -1,0 +1,30 @@
+.brand{
+  margin: 20rpx;
+}
+input{
+  border: 1px solid #999;
+}
+.menu{
+  display: flex;
+  background-color: skyblue;
+  height: 60rpx;
+}
+.menu>view{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list{
+  display: flex;
+  height: 60rpx;
+}
+.list>view{
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    
+  

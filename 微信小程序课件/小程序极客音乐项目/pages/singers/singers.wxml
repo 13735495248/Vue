@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="item" wx:for="{{singerList}}">
+    <image class="icon" src="{{item.picUrl}}" lazy-load="{{true}}"></image>
+    <view class="des">
+      <image wx:if="{{index == 0}}" src="/static/images/crown.png"></image>
+      <text wx:if="{{index !== 0}}" class="rank">{{index+1}}.</text>
+      <text class="name">{{item.name}}</text>
+    </view>
+  </view>
+</view>

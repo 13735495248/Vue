@@ -1,0 +1,12 @@
+<view class="bg">
+  <view class="header"></view>
+  <view class="card">
+    会员特权
+  </view>
+  <view 
+  bindtouchstart="touchstart"
+  bindtouchmove="touchmove"
+  bindtouchend="touchend"
+  style="transform:{{mytransform}};transition:{{mytransition}}"
+  class="content"></view>
+</view>

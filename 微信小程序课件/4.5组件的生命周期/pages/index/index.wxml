@@ -1,0 +1,2 @@
+<myname wx:if="{{flag}}"></myname>
+<button bindtap="change">显示/隐藏组件</button>

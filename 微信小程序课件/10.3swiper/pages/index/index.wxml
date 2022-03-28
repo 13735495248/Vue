@@ -1,0 +1,14 @@
+<!-- 
+  indicator-dots:是否显示圆点指示器
+  autoplay:是否自动播放
+  interval:两张图片之间的间隔时间
+  duration:滑动动画时长
+ -->
+<swiper indicator-dots="{{indicatorDots}}" 
+autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+  circular="{{true}}">
+  <swiper-item wx:for="{{imgUrls}}">
+    <!--widthFix:保持图片宽高比不变-->
+    <image src="{{item}}" class="slide-image" mode="widthFix" />
+  </swiper-item>
+</swiper>

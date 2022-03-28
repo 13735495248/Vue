@@ -1,0 +1,9 @@
+<view class="container">
+  <view>
+    今日天气:
+    <span class="{{flag?'red-text':'blue-text'}}">
+      {{flag?'晴':'阴'}}
+    </span>
+  </view>
+  <button bindtap="foo">切换天气</button>
+</view>

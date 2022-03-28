@@ -1,0 +1,4 @@
+<!--components/myname/myname.wxml-->
+<text>myname组件</text>
+<!-- 绑定点击事件 -->
+<button bindtap="clickmsg">发送数据给父组件</button>

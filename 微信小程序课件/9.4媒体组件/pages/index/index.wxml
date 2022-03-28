@@ -1,0 +1,6 @@
+<button bindtap="goimage">去image组件</button>
+<button bindtap="goaudio">去audio组件</button>
+<button bindtap="govideo">去video组件</button>
+<button bindtap="gocamera">去camera组件</button>
+
+

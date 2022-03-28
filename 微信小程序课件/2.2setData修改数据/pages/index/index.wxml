@@ -1,0 +1,5 @@
+<view class="container">
+  <view>数字:{{num}}</view>
+  <view>字母:{{mychar}}</view>
+  <button bindtap="foo">数字增加1</button>
+</view>

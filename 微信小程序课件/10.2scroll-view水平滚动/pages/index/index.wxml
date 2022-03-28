@@ -1,0 +1,19 @@
+<!--
+  局部水平滚动
+  注意:1.容器srcoll-x设置为true
+       2.容器white-space:nowrap
+       3.子元素display: inline-block
+       三者都不能缺少,否则会不显示
+-->
+<scroll-view scroll-x="{{true}}" style=" white-space: nowrap;">
+    <view style="background: red; width: 200px; height: 100px; display: inline-block"></view>
+    <view style="background: green; width: 200px; height: 100px; display: inline-block"></view>
+    <view style="background: blue; width: 200px; height: 100px; display: inline-block"></view>
+    <view style="background: yellow; width: 200px; height: 100px; display: inline-block"></view>
+  </scroll-view>
+
+  <scroll-view scroll-x="{{true}}" style="white-space:nowrap">
+    <view wx:for="{{list}}" class="{{index%2==0?'default':'select'}}">
+    {{item}}
+    </view>
+  </scroll-view>

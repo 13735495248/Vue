@@ -1,0 +1,1 @@
+<search bind:send="foo"></search>

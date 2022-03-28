@@ -1,0 +1,12 @@
+<!-- 
+  lazy-load懒加载:图片全部加载完再显示,而不是边加载边显示
+  bindload:绑定图片加载的事件,可以获取到图片信息
+  mode:图片显示模式,有13种模式.widthFix:图片宽度填充，高度由图片宽高比自动计算
+  -->
+<image 
+src="/assets/icon.png" 
+lazy-load="{{true}}" 
+mode="widthFix"
+bindload="imgload">
+</image>
+

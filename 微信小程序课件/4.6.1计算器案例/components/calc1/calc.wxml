@@ -1,0 +1,6 @@
+<view  class="container">
+<input bind:input="c" model:value="{{num1}}" type="text"/>
++
+<input bind:input="c" model:value="{{num2}}" type="text"/>
+={{num1*1+num2*1}}
+</view>

@@ -1,0 +1,10 @@
+<view class="list">
+    <view 
+    bindtap="click" data-index="{{index}}"
+    class="item" wx:for="{{types}}" wx:key="*this">
+        <view 
+        class="{{selectIndex==index?'default select':'default'}}">
+        </view>
+        <view class="text">{{item}}</view>
+    </view>
+</view>

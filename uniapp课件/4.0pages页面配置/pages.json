@@ -1,0 +1,26 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				/* 
+				去掉系统默认的导航
+				注意:非H5端,手机顶部状态栏区域会被页面内容覆盖。
+				uni-app提供了状态栏高度的css变量--status-bar-height,
+				我们可以用一个和状态栏一样高的view在顶端占位,解决这个问题
+				*/
+				"navigationStyle":"custom",
+				//导航栏文字
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		/* 是否开启下拉刷新 */
+		"enablePullDownRefresh":true
+	}
+}

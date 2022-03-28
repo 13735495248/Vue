@@ -1,0 +1,2 @@
+/* 使用@import可以在wxss里面引入使用外部的wxss文件 */
+@import "./custom.wxss"

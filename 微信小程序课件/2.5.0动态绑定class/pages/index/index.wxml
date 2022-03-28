@@ -1,0 +1,11 @@
+<!-- 
+  class="类名"和class="{{类名}}"的区别?
+    前者直接写类名即可,如 class="default"
+    后者的类名,必须是一个字符串,如class="{{'default'}}"这样是
+    正确的写法;class="{{default}}"这样写是错误的,小程序会将default
+    当成变量去data中寻找.
+ -->
+<view class="container">
+  <view class="{{flag?'select':'default'}}">你好,小程序!</view>
+  <button bindtap="foo">切换颜色</button>
+</view>

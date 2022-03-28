@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "teacher": "/components/teacher/teacher",
+    "student": "/components/student/student",
+    "result": "/components/result/result"
+  }
+}

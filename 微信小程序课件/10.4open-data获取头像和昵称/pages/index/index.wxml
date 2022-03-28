@@ -1,0 +1,12 @@
+<!-- 获取头像 -->
+<view class="iconimg">
+  <open-data  type="userAvatarUrl"></open-data>
+</view>
+
+<!-- 获取昵称 -->
+<open-data type="userNickName"></open-data>
+<!-- 
+  由于小程序隐私政策调整,只能获取到头像和昵称
+  性别等其他信息获取不到 
+-->
+<open-data type="userGender"></open-data>

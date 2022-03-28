@@ -1,0 +1,37 @@
+<view class="videoContainer">
+
+  <view class="search" bindtap="goSearch">
+    <image src="../../static/images/search.png" />
+    <text>{{searchDefaultSong}}</text>
+  </view>
+
+  <scroll-view class="scroll" scroll-x="{{true}}" enable-flex="{{true}}">
+    <view wx:for="{{menus}}" bindtap="clickMenu" data-index="{{index}}" data-item="{{item}}" class="item">
+      <text class="{{selectIndex==index?'title select':'title'}}">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  
+  <scroll-view
+  wx:if="{{videoList.length==0?false:true}}"
+  custom-cache="{undefined{false}}"
+  scroll-y="{{true}}" 
+  class="videoScroll">
+    <view class="videoItem" wx:for="{{videoList}}">
+      <image class="myImg" src="{{item.data.coverUrl}}"></image>
+      <view class="title">
+        {{item.data.title}}
+      </view>
+
+      <view class="des">
+        <view class="left">
+          <image src="{{item.data.creator.avatarUrl}}"></image>
+          <text>{{item.data.creator.nickname}}</text>
+        </view>
+        <view class="right"></view>
+      </view>
+      
+    </view>
+  </scroll-view>
+  <text class="noti" wx:if="{{videoList.length==0?true:false}}">抱歉,该类别暂无数据!</text>
+
+</view>

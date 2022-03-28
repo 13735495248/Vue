@@ -1,0 +1,7 @@
+<view>数字a:{{a}}</view>
+<view>数字b:{{b}}</view>
+<view>a,b的和:{{sum}}</view>
+<view>姓名:{{person.name}}</view>
+<button bind:tap="foo">a加1</button>
+<button bind:tap="foo1">b加1</button>
+<button bind:tap="modiname">修改名字</button>

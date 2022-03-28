@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+    <style>
+        #box {
+            background-color: red;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <button onclick="foo1()">移动</button>
+    <button onclick="foo2()">旋转</button>
+    <button onclick="foo3()">缩放</button>
+    <script>
+        function foo1() {
+            //获取dom
+            let box = document.getElementById('box');
+            //水平移动
+            box.style.transform = "translateX(100px)";
+            //添加过渡动画
+            box.style.transition = "all 1s ease";
+        }
+
+        function foo2() {
+            //获取dom
+            let box = document.getElementById('box');
+            //水平移动
+            box.style.transform = "rotate(30deg)";
+            //添加过渡动画
+            box.style.transition = "all 1s ease";
+        }
+
+        function foo3() {
+            //获取dom
+            let box = document.getElementById('box');
+            //水平移动
+            box.style.transform = "scale(0.5)";
+            //添加过渡动画
+            box.style.transition = "all 1s ease";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+<view class="content"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index"><image src="{{item}}" data-event-opts="{{[['tap',[['previewimg',[index]]]]]}}" bindtap="__e"></image></block></view>

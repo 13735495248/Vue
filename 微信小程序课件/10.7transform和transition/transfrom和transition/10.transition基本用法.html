@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>扫地小孩专属模板</title>
+    <style>
+        /* 
+        transition的使用:
+          transition: 属性名 持续时间 速度曲线 延迟时间
+          属性名是all的情况下,所有属性变化都会加过渡动画
+
+        哪些属性可以进行transition过渡设置?
+          颜色,大小,位置几乎都可以,如color,background-color,width,height
+          opacity,top,right等
+        */
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            transition: width 1s ease 1s;
+        }
+
+        .box:hover {
+            width: 400px;
+        }
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color:blue;
+            transition: all 1s ease;
+        }
+
+        .box1:hover{
+            background-color: orange;
+        }
+
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color:green;
+        }
+        .myimg{
+            width: 100px;
+            height: 100px;
+            transition: all 1s ease;
+        }
+        .box2:hover .myimg{
+          width: 150px;
+          height: 150px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+
+    <div class="box1">
+    </div>
+
+    <div class="box2">
+        <img class="myimg" src="./jay.png">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+
+<view class="container">
+  <view>用户名:{{name}}</view>
+  <button bind:tap="gomodi">去修改页面</button>
+</view>

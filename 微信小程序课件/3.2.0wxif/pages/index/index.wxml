@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+<text>
+  数字:{{num}}
+</text>
+
+<!-- 
+wx:if="?" ?处填bool值
+注意:?处一定要填写插值表达式,如果填写字符串则元素始终会显示,
+因为任意字符串转换为bool都是true,只有空串才是false 
+-->
+<view wx:if="{{num==1}}">
+  hello
+</view>
+<view wx:elif="{{num==2}}">
+  你好
+</view>
+<view wx:else>
+  ok
+</view>
+  <view class="btnbg">
+      <!-- bindtap:绑定点击事件,类似vue中的@click -->
+      <button bindtap='change1'>
+        数字变1
+      </button>
+      <button bindtap='change2'>
+        数字变2
+      </button>
+      <button bindtap='change3'>
+        数字变3
+      </button>
+  </view>
+</view>

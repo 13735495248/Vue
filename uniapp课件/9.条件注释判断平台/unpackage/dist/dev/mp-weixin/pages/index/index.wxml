@@ -1,0 +1,1 @@
+<view class="content"><view class="_h2">我是标题</view><hello vue-id="8dd740cc-1" bind:__l="__l"></hello></view>

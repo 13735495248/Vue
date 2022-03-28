@@ -1,0 +1,44 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "touristappid",
+  "projectname": "4.2condition配置",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "mode1",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/target1"
+        },
+        {
+          "name": "mode2",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/target2"
+        }
+      ]
+    }
+  }
+}

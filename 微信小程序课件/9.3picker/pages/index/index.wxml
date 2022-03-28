@@ -1,0 +1,8 @@
+<!-- 
+  bindchange:绑定数据变化事件
+  value:索引值
+  range:数据源
+   -->
+<picker bindchange='change' value="{{index}}" range="{{list}}">
+  {{list[index]}}
+</picker>
